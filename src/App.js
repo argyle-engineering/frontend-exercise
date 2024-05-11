@@ -3,14 +3,12 @@ function App() {
 
   return (
     <div>
-      <input type='text' />
+      <input type="text" />
       <div>
-        <p>
-          Output: {text}
-        </p>
+        <p>Output: {text}</p>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
