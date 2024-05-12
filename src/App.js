@@ -28,7 +28,7 @@ function App() {
 
       // Check "AND" link word is on correct position
       if (numberWords[index] === LINK_WORD) {
-        if (isLinkWordOnSemanticPosition(temporaryTotal, index)) {
+        if (isLinkWordOnSemanticPosition(temporaryTotal, index, numberWords.length)) {
           continue;
         } else {
           return INCORRECT_TEXT;
@@ -99,8 +99,8 @@ function App() {
     return true;
   }
 
-  function isLinkWordOnSemanticPosition(temporaryTotal, index) {
-    return index !== 0 && (temporaryTotal === 0 || temporaryTotal % 100 === 0);
+  function isLinkWordOnSemanticPosition(temporaryTotal, index, numberOfWords) {
+    return index !== 0 && (temporaryTotal === 0 || temporaryTotal % 100 === 0) && numberOfWords - 1  !== index;
   }
 
   function getNextMaxSeparator(currentMax) {
