@@ -42,10 +42,6 @@ function App() {
         return INCORRECT_TEXT;
       }
 
-      // if (temporaryTotal > 999) {
-      //   return INCORRECT_TEXT;
-      // }
-
       if (separators.includes(value)) {
         if (value <= nextMaxSeparator) {
           total = total + temporaryTotal * value;
@@ -113,18 +109,6 @@ function App() {
   function handleChange(event) {
     setText(transformTextToNumber(event.target.value))
   }
-
-
-  // console.log(9 / 100);
-
-  // console.log(transformTextToNumber("fifty four"));
-  // console.log(transformTextToNumber("two thousand and forty five"));
-  // console.log(transformTextToNumber("three million one hundred thousand and ninety"));
-  // console.log(transformTextToNumber("nine hundred ninety nine million nine hundred and ninety nine thousand nine hundred ninety nine"));
-  // console.log(transformTextToNumber("twenty and nine"));
-  // console.log(transformTextToNumber("one hundred ninety nine"));
-
-  // console.log(transformTextToNumber("one hundred two twenty two"));
 
   return (
     <div>
