@@ -9,6 +9,10 @@ function App() {
   const [text, setText] = useState('');
 
   function transformTextToNumber(inputWord) {
+
+    if(!inputWord.trim()){
+      return "";
+    }
     // Condition for zero case
     if (inputWord.toLowerCase().trim() === ZERO_CASE_WORD) {
       return 0;

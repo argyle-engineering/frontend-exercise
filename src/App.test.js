@@ -21,6 +21,12 @@ describe("App", () => {
     expect(p).toHaveTextContent("Output: 21");
   });
 
+  it('should not display any result for empty string', () => {
+    const [input, p] = setup();
+    fireEvent.change(input, { target: { value: " " } });
+    expect(p).toHaveTextContent("Output:");
+  });
+
   it('should convert "zero" into 0', () => {
     const [input, p] = setup();
     fireEvent.change(input, { target: { value: "zero" } });
