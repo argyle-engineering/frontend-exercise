@@ -37,7 +37,7 @@ function App() {
     let blockTotal = 0;
     let nextMaxSeparator = Math.max(...separators);
 
-    // Will iterate one by one 
+
     for (let index = 0; index < numberWords.length; index++) {
       // Will not enforce "AND" word in order to enhance user experience as some users  
       // usually type numbers without it but we will not accept "AND" word in a non semantic position
@@ -76,9 +76,9 @@ function App() {
           // Actually last numbers were linked to hundred digits, so we need to unblock them and block only the hundreds digit
           digitBlockedForChange = [true, false, false];
 
-          // Condition for too big temporary total or too small for 2 cases:
-          // - hundreds encountered after tens 
-          // - hundreds encountered without any number before in the block
+          // Condition for too big and too small block total, for 2 cases:
+          // - hundreds encountered after a number bigger then 9 
+          // - hundred encountered first in the block
           if (blockTotal > 999 || blockTotal === 0) {
             return INCORRECT_TEXT;
           }
@@ -104,15 +104,15 @@ function App() {
       .split("")
       .map((value) => +value);
 
-    for (let i = 0; i < 3; i++) {
-      if (digits[i]) {
-        //if the digit is blocked (already changed) will return false because the order of words is wrong
-        if (digitBlockedForChange[i]) {
+    for (let index = 0; index < 3; index++) {
+      if (digits[index]) {
+        // if the digit is blocked (already changed) will return false because the order of words is wrong
+        if (digitBlockedForChange[index]) {
           return false;
         } else {
-          //if the digit is not blocked (already changed) will block all digits from previous positions, including this one
+          // if the digit is not blocked (already changed) we will mark as blocked all digits from previous positions, including the current one
           // in order to prevent future adding in this block
-          for (let j = 0; j <= i; j++) {
+          for (let j = 0; j <= index; j++) {
             digitBlockedForChange[j] = true;
           }
         }
@@ -131,14 +131,9 @@ function App() {
     );
   }
 
-
-  function handleChange(event) {
-    setText(transformTextToNumber(event.target.value))
-  }
-
   return (
     <div>
-      <input type="text" onChange={handleChange} />
+      <input type="text" onChange={(event) => { setText(transformTextToNumber(event.target.value)) }} />
       <div>
         <p>Output: {text}</p>
       </div>
