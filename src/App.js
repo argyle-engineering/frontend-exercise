@@ -9,7 +9,7 @@ function App() {
   const [text, setText] = useState('');
 
   function transformTextToNumber(inputWord) {
-
+    // Do not display anything if input has only spaces or it's empty
     if(!inputWord.trim()){
       return "";
     }
