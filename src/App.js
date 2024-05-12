@@ -1,11 +1,12 @@
 import { numbersMap, separators } from "./constants/numbers-map";
+import { useState } from 'react';
 
 const INCORRECT_TEXT = "incorrect";
 const LINK_WORD = "and";
 const ZERO_CASE_WORD = "zero";
 
 function App() {
-  const text = "";
+  const [text, setText] = useState('');
 
   function transformTextToNumber(inputWord) {
     if (inputWord.toLowerCase().trim() === ZERO_CASE_WORD) {
@@ -108,6 +109,12 @@ function App() {
     );
   }
 
+
+  function handleChange(event) {
+    setText(transformTextToNumber(event.target.value))
+  }
+
+
   // console.log(9 / 100);
 
   // console.log(transformTextToNumber("fifty four"));
@@ -121,7 +128,7 @@ function App() {
 
   return (
     <div>
-      <input type="text" />
+      <input type="text" onChange={handleChange} />
       <div>
         <p>Output: {text}</p>
       </div>
