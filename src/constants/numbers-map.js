@@ -1,4 +1,4 @@
-export const numbers = {
+export const numbersMap = {
   one: 1,
   two: 2,
   three: 3,
@@ -25,11 +25,15 @@ export const numbers = {
   sixty: 60,
   seventy: 70,
   eighty: 80,
-  ninety: 90
-};
-
-export const multipliers = {
+  ninety: 90,
   hundred: 100,
   thousand: 1000,
   million: 1000000,
-} 
+
+};
+
+
+export const separators = [ 
+  1000,
+  1000000
+]
