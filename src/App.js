@@ -135,7 +135,7 @@ function App() {
     <div>
       <input type="text" onChange={(event) => { setText(transformTextToNumber(event.target.value)) }} />
       <div>
-        <p>Output: {text}</p>
+        <p role="paragraph">Output: {text}</p>
       </div>
     </div>
   );
