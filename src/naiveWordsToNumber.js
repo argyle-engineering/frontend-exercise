@@ -65,12 +65,7 @@ function period(tokens, period = undefined) {
     throw new Error(`Encountered a redundant "${period}" in "${tokens.join(' ')}"`)
   }
 
-  const periodValue = hundreds(tokens)
-  // if (periodValue === 0) {
-  //   throw new Error(`Incorrect ${period} period numbers in "${tokens.join(' ')}" before "${period}"`)
-  // }
-
-  return periodValue * (PERIODS[period] || 1)
+  return hundreds(tokens) * (PERIODS[period] || 1)
 }
 
 
