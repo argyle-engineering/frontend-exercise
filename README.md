@@ -4,7 +4,7 @@
 
 This project is a developer evaluation task: build a credit card form UI in **React + TypeScript** that validates input and simulates submission. All validation logic should be test-covered using **Vitest + React Testing Library**.
 
-## 📦 Tech Stack
+## Tech Stack
 
 - React (with hooks)
 - TypeScript
@@ -15,7 +15,7 @@ This project is a developer evaluation task: build a credit card form UI in **Re
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Create the Project
 
@@ -66,7 +66,7 @@ import "@testing-library/jest-dom";
 
 ⸻
 
-## 🧩 Features to Build
+## Features to Build
 
 Create a credit card form with these fields:
 
@@ -75,7 +75,7 @@ Create a credit card form with these fields:
 - Expiry Date: MM/YY format
 - CVV: 3–4 digits
 
-🧠 Required Behaviors
+### Required Behaviors
 
 - All fields are required
 - Show validation errors when input is invalid or empty
@@ -85,7 +85,7 @@ Create a credit card form with these fields:
 
 ⸻
 
-## ✅ User Stories to Cover with Tests
+## User Stories to Cover with Tests
 
 Write tests using Vitest and React Testing Library in src/components/CreditCardForm.test.tsx:
 
@@ -98,7 +98,7 @@ Write tests using Vitest and React Testing Library in src/components/CreditCardF
 
 ⸻
 
-### 🌟 Bonus #1 – Custom Hook: useCard
+### Bonus #1 – Custom Hook: useCard
 
 Create a `useCard` hook in `src/hooks/useCard.ts` that manages all form logic and validation.
 
@@ -137,7 +137,7 @@ Hook Responsibilities:
 
 ⸻
 
-### 🌟 Bonus #2 – Card Brand Detection
+### Bonus #2 – Card Brand Detection
 
 Detect and display card brand using number prefixes:
 
@@ -163,7 +163,7 @@ src/
 
 ⸻
 
-### ✅ Run Tests
+### Run Tests
 
 ```bash
 npx vitest
@@ -177,7 +177,7 @@ npx vitest --watch
 
 ⸻
 
-## 📋 Quality Checklist
+## Quality Checklist
 
 - Modular, typed React components
 - Validations implemented and tested
