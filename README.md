@@ -147,7 +147,7 @@ Detect and display card brand using number prefixes:
 
 ⸻
 
-## 📁 Suggested File Structure
+## Suggested File Structure
 
 ```bash
 src/
